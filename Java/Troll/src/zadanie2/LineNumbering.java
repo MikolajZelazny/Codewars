@@ -19,6 +19,7 @@ public class LineNumbering {
                 doReturna.add(i, pozition);
                 doReturna.remove(i+1);
             }
+            doReturna.remove(0);
 
         // int x = doReturna.size(); // return --> 4
 
