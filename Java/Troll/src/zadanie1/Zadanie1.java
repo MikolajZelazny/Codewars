@@ -2,16 +2,30 @@ package zadanie1;
 
 public class Zadanie1 {
 
-    public void rozwiazanie(){
-        // Creating Outside method for searching vowels in strArray[i]
-        // Only first letter upperCase, others even if vowel remain the same, and if upperCase, then stay upperCase
-        String newStr="";
-        String str = "Java String to String Array Example";
+    public static String disemvowel(String str) {
+        //str.toLowerCase
+        // 2. String[] vowelArr {a,e,i,o,u}
+        // forEach( str )
+        // if( vowelArr==str[i] { delete vowels }
+        // return newStr
         String strArray[] = str.split(" ");
-        for(int i=0; i < strArray.length; i++){
-            newStr+=" "+strArray[i];
+        String newStr="";
+        String[] vowelArr = {"a","e","i","o","u"};
+        for (int i=0;i<str.length();i++) {
+            for (int j=0;j<vowelArr.length;j++) {
+            //for (char j : vowelArr) {
+                //char oldChar = i;
+                //char newChar = "";
+                if (strArray[i]==vowelArr[j]) { // tu jest error
+                    newStr+="";
+                    //str.replace();
+                    break; // without --> ttttthhhhhiiii(4)sssss     iiii(4)sssss...
+                }
+                else {
+                    newStr+=str.charAt(i);
+                }
+            }
         }
-        System.out.println(newStr);
-        System.out.println("/***************************************************************/");
+        return newStr;
     }
 }
