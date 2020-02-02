@@ -1,31 +1,37 @@
 package zadanie1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class Zadanie1 {
 
-    public static String disemvowel(String str) {
-        //str.toLowerCase
-        // 2. String[] vowelArr {a,e,i,o,u}
-        // forEach( str )
-        // if( vowelArr==str[i] { delete vowels }
-        // return newStr
-        String strArray[] = str.split(" ");
-        String newStr="";
-        String[] vowelArr = {"a","e","i","o","u"};
-        for (int i=0;i<str.length();i++) {
-            for (int j=0;j<vowelArr.length;j++) {
-            //for (char j : vowelArr) {
-                //char oldChar = i;
-                //char newChar = "";
-                if (strArray[i]==vowelArr[j]) { // tu jest error
-                    newStr+="";
-                    //str.replace();
-                    break; // without --> ttttthhhhhiiii(4)sssss     iiii(4)sssss...
-                }
-                else {
-                    newStr+=str.charAt(i);
-                }
-            }
+    public static void disemvowel(String str) {
+
+        ArrayList<Character> strCharArr = new ArrayList<>();
+
+        for(int i=0;i<str.length();i++) {
+            strCharArr.add(str.charAt(i));
+
         }
-        return newStr;
+
+        strCharArr.removeIf(n -> (n == 'a' || n == 'e' || n == 'i' || n == 'o' || n == 'u'));
+        strCharArr.removeIf(n -> (n == 'A' || n == 'E' || n == 'I' || n == 'O' || n == 'U'));
+
+        String retStr = "";
+
+        for(int j=0;j<strCharArr.size();j++) {
+            retStr+=strCharArr.get(j).toString();
+
+        }
+
+        //Iterator<Character> it = strCharArr.iterator();
+        //while(it.hasNext()) {
+        //    Character value = it.next();
+        //    retStr+=it.toString();
+        //}
+
+
+        System.out.println(retStr);
     }
 }
